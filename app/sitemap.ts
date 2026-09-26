@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getPostgresPool, isDatabaseConfigured } from '@/lib/funds/postgres-repository';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://fundfolio.example.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://fundfolio-kappa.vercel.app';
   
   // Base static routes
   const routes: MetadataRoute.Sitemap = [
