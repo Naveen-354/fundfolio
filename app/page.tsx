@@ -21,7 +21,7 @@ const emptyPage: FundPageData = {
 export default async function Home() {
   await connection();
   const [initialData, typography] = await Promise.all([
-    getFundPage({ search: "", category: "All", fundHouse: "", sort: "name", page: 1, pageSize: 12 }).catch(() => emptyPage),
+    getFundPage({ search: "", category: "All", fundHouse: "", sort: "name", page: 1, pageSize: 12 }).catch((cause) => { console.error("getFundPage failed", cause); return emptyPage; }),
     getPublicTypographySettings().catch(() => defaultPublicTypography),
   ]);
 
